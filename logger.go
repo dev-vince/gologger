@@ -8,10 +8,10 @@ import (
 type Level int
 
 const (
-	DebugLevel Level = 1
-	InfoLevel Level = 2
-	WarnLevel Level = 3
-	ErrorLevel Level = 4
+	DebugLevel   Level = 1
+	InfoLevel    Level = 2
+	WarnLevel    Level = 3
+	ErrorLevel   Level = 4
 	SuccessLevel Level = 5
 )
 
@@ -61,9 +61,9 @@ func (level Level) Log(message string) {
 	}
 
 	if useColor {
-		fmt.Printf(format, level.GetColor().Sprint(level.GetText()), message)
+		fmt.Printf(format+"\n", level.GetColor().Sprint(level.GetText()), message)
 	} else {
-		fmt.Printf(format, level.GetText(), message)
+		fmt.Printf(format+"\n", level.GetText(), message)
 	}
 }
 
